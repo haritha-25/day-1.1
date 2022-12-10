@@ -1,0 +1,70 @@
+WRITE A BLOG ON DIFFERNCE BETWEEN HTTP1 AND HTTP2
+DEFINITION OF HTTP:(HYPERTEXT TRANSFER PROTOCOL)
+            an application layer protocol used primarily with the WWW (World Wide Web) in the client-server model where a web browser is a client communicating with the webserver which is hosting the website.
+this protocol is used to transfer hypertexts over the internet and it is defined by the WWW for information transfer this protocol defines how the info needs to be formatted and transmitted and it also defines the various actions the web browser should take in response to the calss to access a particular web page.
+HTTP/1.1 vs HTTP/2: What’s the Difference?
+             HTTP/1.1                                                                                        HTTP/2
+ Version 1.1 of HTTP was released in 1997, only one year after the previous version 1.0.                HTTP version 2.0 was officially released in 2015, about eighteen years after the HTTP 1.1    
+  HTTP 1.1 is an enhancement of HTTP 1.0, providing several extensions.
+
+  HTTP 1.1 is a sequential protocol. So, we can send a single request at a time.                         HTTP 2.0, in turn, allows to send requests and receive responses asynchronously. In this way, we can do multiple requests at the same time using a single connection
+
+   As opposed to HTTP/1.1, which keeps all requests and responses in plain text format                   HTTP/2 uses the binary framing layer to encapsulate all messages in binary format, while still maintaining HTTP semantics, such as verbs, methods, and headers
+ 
+HTTP (1.1), we must explicitly require the compression of requests and responses.                        HTTP 2.0, however, executes a GZip compression automatically
+
+Persistent connections: in HTTP 1.0, each request/response pair requires opening a new                   Connection reset: a functionality that allows closing a connection between a server and a client for some reason, thus immediately opening a new one
+In HTTP 1.1, it is possible to execute several requests using a single connection                        Server push: to avoid a server receiving lots of requests, HTTP 2.0 introduced a server push functionality. With that, the server tries to predict the resources 
+                                                                                                         that will be requested soon. So, the server proactively pushes these resources to the client cacheconnection. 
+
+Continue status: to avoid servers refusing unprocessable requests,  now clients can first send 
+only the request headers and check if they receive a continue status code (100) 
+
+New methods: besides the already available methods of HTTP 1.0, the 1.1 version added six extra 
+methods: PUT, PATCH, DELETE, CONNECT, TRACE, and OPTIONS       
+
+
+2 OBJECT AND ITS INTERNAL REPRESENTATION IN JAVASCRIPT:
+objects, in JavaScript, are the most important data type and form the building blocks for modern JavaScript. 
+Objects are the representation of real-world entities in any language representing things by defining its properties along with their values.
+Javascript, objects may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs.
+
+INTERNAL REPRESENTATION OF OBJECTS:
+Create JavaScript Object with Object Literal
+One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below
+let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};
+Create JavaScript Object with Constructor
+Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor as shown below
+function Vehicle(name, maker) {
+   this.name = name;
+   this.maker = maker;
+}
+let car1 = new Vehicle(’Fiesta’, 'Ford’);
+let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)
+console.log(car1.name);    //Output: Fiesta
+console.log(car2.name);    //Output: Santa Fe
+Using the JavaScript Keyword new
+The following example also creates a new JavaScript object with four properties:
+var person = new Object();
+person.firstName = “John”;
+person.lastName = “Doe”;
+person.age = 50;
+person.eyeColor = “blue”;
+Using the Object.create method
+Objects can also be created using the Object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.
+// Animal properties and method encapsulation
+var Animal = {
+  type: 'Invertebrates', // Default value of properties
+  displayType: function() {  // Method which will display type of Animal
+    console.log(this.type);
+  }
+};
+// Create new animal type called animal1 
+var animal1 = Object.create(Animal);
+animal1.displayType(); // Output:Invertebrates
+// Create new animal type called Fishes
+var fish = Object.create(Animal);
+fish.type = 'Fishes';
+fish.displayType(); 
+// Output:Fishes
+
